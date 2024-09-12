@@ -17,7 +17,7 @@ To get the script you can just clone the repo and link it to `~/.local/bin`:
 git clone https://github.com/MrSom3body/vmware-installer
 cd vmware-installer
 chmod +x vmware_installer.sh
-ln -sf $PWD/vmware_installer.sh ~/.local/bin
+ln -sf $PWD/vmware_installer.sh ~/.local/bin/vmware_installer.sh
 ```
 
 ## ⚙️ Usage
