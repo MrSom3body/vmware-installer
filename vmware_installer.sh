@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-VMWARE_HOST_MODULES_URL="https://github.com/nan0desu/vmware-host-modules/"
+VMWARE_HOST_MODULES_URL="https://github.com/philipl/vmware-host-modules"
 
 VERSION="17.6.1"
 BUILD="24319023"
