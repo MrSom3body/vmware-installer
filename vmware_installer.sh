@@ -4,9 +4,9 @@ IFS=$'\n\t'
 
 VMWARE_HOST_MODULES_URL="https://github.com/nan0desu/vmware-host-modules/"
 
-VERSION="17.5.2"
-BUILD="23775571"
-BASE_URL=""https://softwareupdate.vmware.com/cds/vmw-desktop/ws/${VERSION}/${BUILD}/linux""
+VERSION="17.6.1"
+BUILD="24319023"
+BASE_URL="https://softwareupdate.vmware.com/cds/vmw-desktop/ws/${VERSION}/${BUILD}/linux"
 URL="${BASE_URL}/core/VMware-Workstation-${VERSION}-${BUILD}.x86_64.bundle.tar"
 
 OLD_DIR=$(pwd)
@@ -23,6 +23,8 @@ NC="\033[0;m"
 echo() {
   command echo -e "$@"
 }
+
+echo "${URL}"
 
 dry_run() {
   if [ $DRY_RUN -eq 1 ]; then
