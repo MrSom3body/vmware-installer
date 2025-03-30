@@ -1,5 +1,9 @@
 # 🚀 VMware Workstation Installer & Patcher
 
+> [!NOTE]
+> This script sadly can't download VMware for you anymore as Broadcom has
+> stopped providing the `.tar.gz` without an account
+
 Welcome to the **VMware Workstation Installer & Patcher** script! This script helps you install VMware Workstation, fetch necessary dependencies, and patch VMware modules to get your setup working on Linux distributions on Arch, Debian and Fedora.
 
 ## ✨ Features
