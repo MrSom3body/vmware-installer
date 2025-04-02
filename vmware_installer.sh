@@ -147,8 +147,10 @@ done
 greeting
 get_deps
 if ! which vmware &>/dev/null; then
-  echo "${RED}VMWare Workstation is not installed${NC}"
-  install_vmware
+  echo "${RED}VMware Workstation is not installed${NC}"
+  echo "${ORANGE}VMware can't be installed automatically anymore (thank broadcom)...${NC}"
+  echo "${ORANGE}Please make sure you have VMware installed before trying to run this script!${NC}"
+  exit 1
 fi
 fix_vmware_modules
 clean_up
