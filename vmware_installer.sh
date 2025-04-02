@@ -93,25 +93,25 @@ get_deps() {
 }
 
 install_vmware() {
-  echo "${GREEN}Installing VMWare Workstation${NC}"
+  echo "${GREEN}Installing VMware Workstation${NC}"
   cd "$TEMP_DIR"
-  echo "${ORANGE}Downloading VMWare Workstation${NC}"
+  echo "${ORANGE}Downloading VMware Workstation${NC}"
   curl -L "$URL" -o "$TEMP_DIR/vmware-workstation.tar"
-  echo "${ORANGE}Extracting VMWare Workstation${NC}"
+  echo "${ORANGE}Extracting VMware Workstation${NC}"
   tar -xf "$TEMP_DIR/vmware-workstation.tar" -C "$TEMP_DIR"
-  echo "${ORANGE}Installing VMWare Workstation${NC}"
+  echo "${ORANGE}Installing VMware Workstation${NC}"
   dry_run sudo bash "$TEMP_DIR/VMware-Workstation-${VERSION}-${BUILD}.x86_64.bundle" --eulas-agreed --deferred-gtk
-  echo "${GREEN}VMWare Workstation installed successfully!${NC}"
+  echo "${GREEN}VMware Workstation installed successfully!${NC}"
   echo
 }
 
 fix_vmware_modules() {
-  echo "${GREEN}Fixing VMWare modules${NC}"
+  echo "${GREEN}Fixing VMware modules${NC}"
   cd "$TEMP_DIR"
   git clone "$VMWARE_HOST_MODULES_URL"
   cd vmware-host-modules
-  echo "VMWare version: ${GREEN}$(vmware -v)${NC}"
-  echo "${ORANGE}Select the branch matching your VMWare version (if there is none use the first one and hope for the best):${NC}"
+  echo "VMware version: ${GREEN}$(vmware -v)${NC}"
+  echo "${ORANGE}Select the branch matching your VMware version (if there is none use the first one and hope for the best):${NC}"
   dry_run git checkout --track "$(git branch -r | fzf --height 10 --tac | xargs)"
 
   echo "${ORANGE}Patching vmware modules${NC}"
@@ -120,7 +120,7 @@ fix_vmware_modules() {
   echo "${ORANGE}Starting vmware services${NC}"
   dry_run sudo systemctl start vmware
 
-  echo "${GREEN}VMWare modules patched successfully!${NC}"
+  echo "${GREEN}VMware modules patched successfully!${NC}"
   echo
 }
 
