@@ -76,16 +76,12 @@ EOF
 get_deps() {
   if which pacman &>/dev/null; then
     echo "${ORANGE}Detected Arch, installing required packages.${NC}"
-    dry_run sudo pacman -Syu
     dry_run sudo pacman -S base-devel linux-headers git fzf
   elif which apt &>/dev/null; then
     echo "${ORANGE}Detected Debian, installing required packages.${NC}"
-    dry_run sudo apt update
-    dry_run sudo apt upgrade
     dry_run sudo apt install build-essential linux-headers-"$(uname -r)" git fzf
   elif which dnf &>/dev/null; then
     echo "${ORANGE}Detected Fedora, installing required packages.${NC}"
-    dry_run sudo dnf update
     dry_run sudo dnf install kernel-devel git fzf
   else
     echo "${RED}Didn't detect distribution, please install git, kernel-headers, make, and fzf yourself${NC}"
